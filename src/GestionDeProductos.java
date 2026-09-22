@@ -138,6 +138,15 @@ public class GestionDeProductos extends javax.swing.JFrame {
                     javax.swing.JOptionPane.ERROR_MESSAGE);
             return;
         }
+        if (PrecioTexto.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "El precio no puede estar vacío.",
+                    "Error de validación",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        double precio;
         }
 
 // Si llegamos hasta acá, todos los datos son válidos
