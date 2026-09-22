@@ -12,6 +12,7 @@ public class GestionDeProductos extends javax.swing.JFrame {
      * Creates new form GestionDeProductos
      */
     public GestionDeProductos() {
+        initComponents();
         modelo = new javax.swing.table.DefaultTableModel(
                 new Object[]{"Nombre", "Categoria", "Precio"}, 0
         ) {
@@ -21,7 +22,6 @@ public class GestionDeProductos extends javax.swing.JFrame {
             }
         };
         jTable.setModel(modelo);
-    }
     }
 
     /**
@@ -157,9 +157,9 @@ public class GestionDeProductos extends javax.swing.JFrame {
                     javax.swing.JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if (precio <= 0) {
+        if (!Double.isFinite(precio) || precio <= 0) {
             javax.swing.JOptionPane.showMessageDialog(this,
-                    "El precio debe ser mayor a cero.",
+                    "El precio debe ser un número finito mayor a cero.",
                     "Error de validación",
                     javax.swing.JOptionPane.ERROR_MESSAGE);
             return;
