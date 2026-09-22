@@ -12,7 +12,16 @@ public class GestionDeProductos extends javax.swing.JFrame {
      * Creates new form GestionDeProductos
      */
     public GestionDeProductos() {
-        
+        modelo = new javax.swing.table.DefaultTableModel(
+                new Object[]{"Nombre", "Categoria", "Precio"}, 0
+        ) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        jTable.setModel(modelo);
+    }
     }
 
     /**
