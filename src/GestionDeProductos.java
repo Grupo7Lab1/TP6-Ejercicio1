@@ -128,7 +128,16 @@ public class GestionDeProductos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
-        
+        String Categoria = (String) jComboBoxCategoria.getSelectedItem();
+        String Nombre = jTNombre.getText().trim();
+        String PrecioTexto = jTPrecio.getText().trim();
+        if (Nombre.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "El nombre del producto no puede estar vacío.",
+                    "Error de validación",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         }
 
 // Si llegamos hasta acá, todos los datos son válidos
