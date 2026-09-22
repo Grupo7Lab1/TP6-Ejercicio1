@@ -147,7 +147,25 @@ public class GestionDeProductos extends javax.swing.JFrame {
         }
 
         double precio;
+        
+        try {
+            precio = Double.parseDouble(PrecioTexto.replace(",", "."));
+        } catch (NumberFormatException ex) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "El precio ingresado no es un número válido.",
+                    "Error de validación",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
         }
+        if (precio <= 0) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "El precio debe ser mayor a cero.",
+                    "Error de validación",
+                    javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        
 
 // Si llegamos hasta acá, todos los datos son válidos
         modelo.addRow(new Object[]{Nombre, Categoria, precio});
